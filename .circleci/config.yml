@@ -1,7 +1,8 @@
 version: 2.1
 
 orbs:
-  node: circleci/node@5
+  node: circleci/node@3.0.0
+
 # Define the jobs we want to run for this project
 jobs:
   build:
@@ -9,12 +10,9 @@ jobs:
       - image: cimg/base:2023.03
     steps:
       - checkout
-      - node/install-packages:
-          pkg-manager: npm
-      - run: 
-        name: Run tetss
-        command: npm test
-
+      - node/install-npm
+      - run: npm install
+      - run: npm test
   test:
     docker:
       - image: cimg/base:2023.03
