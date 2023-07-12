@@ -6,7 +6,8 @@ jobs:
     # Install node dependencies and run tests
     executor: node/default
     docker:
-      - image: circleci/node:7.10.1-browsers
+      - image: circleci/node:7.10.1-browsers 
+    environment: CHROME_BIN=/usr/bin/google-chrome
     steps:
       - checkout
       - node/install-packages:
