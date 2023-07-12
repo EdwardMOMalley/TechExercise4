@@ -5,12 +5,12 @@ orbs:
   node: circleci/node@5
 jobs:
   test-node:
+    executor: node/default
     # Install node dependencies and run tests
     docker:
       - image: cimg/base:2023.07-browsers
         environment:
           CHROME_BIN: /usr/bin/google-chrome
-    executor: node/default
     steps:
       - checkout
       - node/install-packages:
