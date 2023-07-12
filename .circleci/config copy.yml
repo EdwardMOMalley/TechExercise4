@@ -1,0 +1,20 @@
+version: 2.1
+orbs:
+  node: circleci/node@5
+jobs:
+  test-node:
+    # Install node dependencies and run tests
+    executor: node/default
+    docker:
+      - image: circleci/node:7.10.1-browsers
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          name: Run tests
+          command: npm test
+workflows:
+  build-and-test:
+    jobs:
+      - test-node
