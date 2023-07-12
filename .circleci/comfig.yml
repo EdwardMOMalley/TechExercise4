@@ -8,6 +8,8 @@ jobs:
     docker:
       -image: cimg/base:stable
     # Install node dependencies and run tests
+    environment: 
+      CHROME_BIN: /usr/bin/google-chrome
     executor: node/default
     steps:
       - checkout
