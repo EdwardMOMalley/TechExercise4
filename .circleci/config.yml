@@ -10,8 +10,8 @@ jobs:
       - node/install-packages:
           pkg-manager: npm
       - run:
-          name: Update
-          command: npm install
+          name: Add Chrome Launcher
+          command: npm i -D karma-chrome-launcher
       - run:
           name: Run tests
           command: npm test
