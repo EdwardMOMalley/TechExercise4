@@ -7,7 +7,7 @@ jobs:
   test-node:
     # Install node dependencies and run tests
     docker:
-      - image: cimg/node:16:19.0-browsers
+      - image: cimg/base:stable-browsers
         environment:
           CHROME_BIN: /usr/bin/google-chrome
     executor: node/default
