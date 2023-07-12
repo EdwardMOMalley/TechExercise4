@@ -17,7 +17,7 @@ jobs:
           pkg-manager: npm
       - run:
           name: Run tests
-          command: echo ${CHROM_BIN}
+          command: npm test
   build-node:
     # Build node project
     executor: node/default
