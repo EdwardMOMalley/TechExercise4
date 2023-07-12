@@ -11,7 +11,7 @@ jobs:
           pkg-manager: npm
       - run:
           name: Run tests
-          command: ng test --source-map=false --browsers=ChromeHeadless --watch=false
+          command: npm test
   build-node:
     # Build node project
     executor: node/default
