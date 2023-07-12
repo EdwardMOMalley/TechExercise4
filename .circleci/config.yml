@@ -11,14 +11,16 @@ jobs:
     steps:
       - checkout
       - node/install-npm
-      - run: npm install
-      - run: npm test
+      - run:
+        name: Install Dependencies
+         npm install
+
   test:
     docker:
       - image: cimg/base:2023.03
     steps:
       - checkout
-      - run: echo "this is the test job"
+      - run: npm test
 
 # Orchestrate our job run sequence
 workflows:
