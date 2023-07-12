@@ -10,9 +10,6 @@ jobs:
       - node/install-packages:
           pkg-manager: npm
       - run:
-          name: Add Chrome Launcher
-          command: npm i -D karma-chrome-launcher
-      - run:
           name: Run tests
           command: npm test
   build-node:
@@ -37,7 +34,7 @@ jobs:
   deploy:
     # This is an example deploy job, not actually used by the workflow
     docker:
-      - image: cimg/base:stable
+      - image: circleci/node:9.5-browsers
     steps:
       # Replace this with steps to deploy to users
       - run:
