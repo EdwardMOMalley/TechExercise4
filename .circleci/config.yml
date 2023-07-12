@@ -11,9 +11,7 @@ jobs:
     steps:
       - checkout
       - node/install-npm
-      - run:
-        name: Install Dependencies
-         npm install
+      - run: npm install
 
   test:
     docker:
