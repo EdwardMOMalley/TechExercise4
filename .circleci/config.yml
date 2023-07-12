@@ -1,12 +1,12 @@
 version: 2.1
 orbs:
-  node: circleci/node@5
+  node: cimg/node@5
 jobs:
   test-node:
     # Install node dependencies and run tests
     executor: node/default
     docker:
-      - image: circleci/node:7.10.1-browsers 
+      - image: cimg/node:7.10.1-browsers 
     steps:
       - checkout
       - node/install-packages:
