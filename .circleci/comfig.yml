@@ -5,6 +5,8 @@ orbs:
   node: circleci/node@5
 jobs:
   test-node:
+    docker:
+      -image: cimg/base:stable
     # Install node dependencies and run tests
     executor: node/default
     steps:
